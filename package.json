@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,9 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "express-ejs": "^2.0.0",
     "express-ejs-layouts": "^2.2.0",
+    "layout": "^2.2.0",
     "method-override": "^2.3.7",
     "nodemon": "^3.1.7"
   }

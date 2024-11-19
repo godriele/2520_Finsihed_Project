@@ -46,6 +46,29 @@ let remindersController = {
 
   delete: (req, res) => {
     // Implement this code
+    /*
+      Todo:
+      - Get the reminder ID first 
+      based on the edit func, can use
+      req.params.id; to get each id 
+      - Find the index of the reminder
+      can assign the reminder.id to the deleteID
+      - Remove said Reminder using splice 
+    */
+    // 1. Get the reminder ID
+      let deleteID = req.params.id;
+    // 2. Here i am assigning the reminder Id to the ID we want to delete
+    // so when we view the reminder task, we are accessing that ID, so if we pressed delete 
+    // the current ID we are in, we are splicing it to remove if from the array
+
+    // this is similar to this:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+    let index = database.cindy.reminders.findIndex(reminder => reminder.id == deleteID);
+    // 3. Remove the reminder
+    // "1" for the number of reminders to rremove from the starting index
+    database.cindy.reminders.splice(index, 1);
+    
+    res.redirect("/reminders");
   },
 };
 
