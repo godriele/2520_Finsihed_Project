@@ -41,7 +41,23 @@ let remindersController = {
   },
 
   update: (req, res) => {
-    // implement this code
+    //finds reminder id
+    let reminderToUpdateID = parseInt(req.params.id)
+    //finds reminder within database by id
+    let reminder = database.cindy.reminders.find(reminder => reminder.id === reminderToUpdateID);
+    //checks if reminder exists
+    if (reminder) {
+      //update title and text of reminder and marks it as true
+      reminder.title = req.body.title
+      reminder.description = req.body.description
+      reminder.completed = req.body.completed === "true"
+
+      //redirect to reminder page 
+      res.redirect("/reminders")
+    } else {
+      // Handle case where reminer with given ID doesn't exist
+      res.status(404).send("Reminder not found")
+    }
   },
 
   delete: (req, res) => {
