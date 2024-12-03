@@ -1,7 +1,12 @@
 let database = require("../database");
+const { PrismaClient } = require("@prisma/client")
+const db = new PrismaClient();
 
 let remindersController = {
-  list: (req, res) => {
+  list: async (req, res) => {
+    const reminders = await db.reminder.findMany({
+      where: pass
+    })
     res.render("reminder/index", { reminders: database.cindy.reminders });
   },
 
@@ -19,18 +24,22 @@ let remindersController = {
     } else {
       res.render("reminder/index", { reminders: database.cindy.reminders });
     }
+  }, 
+
+  create: async (req, res) => {
+      //const userId = req.user.id;
+      // Use paassport and tie it ot a user when usin reminder 
+      await db.reminders.create({
+        data: {
+          title: req.body.title,
+          description: req.body.description,
+          completed: false,
+          user: { connec: {id: userId }},
+        },
+      });
+      res.redirect("/reminders");
   },
 
-  create: (req, res) => {
-    let reminder = {
-      id: database.cindy.reminders.length + 1,
-      title: req.body.title,
-      description: req.body.description,
-      completed: false,
-    };
-    database.cindy.reminders.push(reminder);
-    res.redirect("/reminders");
-  },
 
   edit: (req, res) => {
     let reminderToFind = req.params.id;
