@@ -2,7 +2,7 @@ Nov 19th, 2024
 ---
 Nathan Chand:
 I worked on the following tasks:
-1. <Helped with the Delete function> - This task is responsible for deleting the reminders(used Godriele's code instead).
+1. Helped with the Delete function - This task is responsible for deleting the reminders(used Godriele's code instead).
 2.
 3. 
 
@@ -11,7 +11,7 @@ I also needed to research on Youtube and Google the following things:
 
 Ivan Shekapuri:
 I worked on the following tasks:
-1. <Worked on update and edit> - This task is responsible for updating and editing the reminders.
+1. Worked on update and edit - This task is responsible for updating and editing the reminders.
 2. 
 3. 
 
@@ -20,7 +20,7 @@ I also needed to research on Youtube and Google the following things:
 
 Godriele:
 I worked on the following tasks:
-1. <Did the delete function> - This task is responsible for deleting the reminders.
+1. Did the delete function - This task is responsible for deleting the reminders.
 2. 
 3. 
 I also needed to research on Youtube and Google the following things:
@@ -31,7 +31,7 @@ I also needed to research on Youtube and Google the following things:
 ---
 Nathan Chand:
 I worked on the following tasks:
-1. <Helped with the update function> - This task is responsible for updating.
+1. Helped with the update function - This task is responsible for updating.
 2. 
 3. 
 
@@ -40,7 +40,7 @@ I also needed to research on Youtube and Google the following things:
 
 Ivan Shekapuri:
 I worked on the following tasks:
-1. <Worked on update and edit(again)> - This task is responsible for updating and editing the reminders.
+1. Worked on update and edit(again) - This task is responsible for updating and editing the reminders.
 2. 
 3. 
 
@@ -49,7 +49,7 @@ I also needed to research on Youtube and Google the following things:
 
 Godriele:
 I worked on the following tasks:
-1. <Did the delete function(again)> - This task is responsible for deleting the reminders.
+1. Did the delete function(again) - This task is responsible for deleting the reminders.
 2. 
 3. 
 ---
@@ -58,7 +58,7 @@ I worked on the following tasks:
 ---
 Nathan Chand:
 I worked on the following tasks:
-1. <Worked on Database and Passport> - This task is responsible for connect to a real database and authentication.
+1. Worked on Database and Passport - This task is responsible for connect to a real database and authentication.
 2. 
 3. 
 
@@ -67,7 +67,7 @@ I also needed to research on Youtube and Google the following things:
 
 Ivan Shekapuri:
 I worked on the following tasks:
-1. <Worked on Passport function> - This task is responsible for authentication.
+1. Worked on Passport function - This task is responsible for authentication.
 2. 
 3. 
 
@@ -76,7 +76,7 @@ I also needed to research on Youtube and Google the following things:
 
 Godriele:
 I worked on the following tasks:
-1. <Working on database> - This task is responsible for connecting the project to an actual database.
+1. Working on database - This task is responsible for connecting the project to an actual database.
 2. 
 3. 
 ---
