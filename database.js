@@ -1,5 +1,11 @@
 let Database = {
   cindy: {
+    login: [
+      { 
+        email: "cindy@email.com",
+        password: "password"
+      },
+    ],
     reminders: [
       {
         id: 1,

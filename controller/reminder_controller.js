@@ -2,12 +2,14 @@ let database = require("../database");
 const { PrismaClient } = require("@prisma/client")
 const db = new PrismaClient();
 
+let database =  require("../models/userModel");
+
 let remindersController = {
   list: async (req, res) => {
     const reminders = await db.reminder.findMany({
-      where: pass
+      where: { userId: userId}
     })
-    res.render("reminder/index", { reminders: database.cindy.reminders });
+    res.render("reminder/index", { reminders: reminders });
   },
 
   new: (req, res) => {
@@ -16,34 +18,31 @@ let remindersController = {
 
   listOne: (req, res) => {
     let reminderToFind = req.params.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
+    let searchResult = req.user.id.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     if (searchResult != undefined) {
       res.render("reminder/single-reminder", { reminderItem: searchResult });
     } else {
-      res.render("reminder/index", { reminders: database.cindy.reminders });
+      res.render("reminder/index", { reminders: req.user.reminders });
     }
-  }, 
-
-  create: async (req, res) => {
-      //const userId = req.user.id;
-      // Use paassport and tie it ot a user when usin reminder 
-      await db.reminders.create({
-        data: {
-          title: req.body.title,
-          description: req.body.description,
-          completed: false,
-          user: { connec: {id: userId }},
-        },
-      });
-      res.redirect("/reminders");
   },
 
+  create: (req, res) => {
+    let reminder = {
+      id: 3,
+      title: req.body.title,
+      description: req.body.description,
+      completed: false,
+    };
+
+    req.user.reminders.push(reminder);
+    res.redirect("/reminders");
+  },
 
   edit: (req, res) => {
     let reminderToFind = req.params.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
+    let searchResult = database.req.user.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     res.render("reminder/edit", { reminderItem: searchResult });
@@ -53,7 +52,7 @@ let remindersController = {
     //finds reminder id
     let reminderToUpdateID = parseInt(req.params.id)
     //finds reminder within database by id
-    let reminder = database.cindy.reminders.find(reminder => reminder.id === reminderToUpdateID);
+    let reminder = database.req.user.reminders.find(reminder => reminder.id === reminderToUpdateID);
     //checks if reminder exists
     if (reminder) {
       //update title and text of reminder and marks it as true
@@ -88,10 +87,10 @@ let remindersController = {
 
     // this is similar to this:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-    let index = database.cindy.reminders.findIndex(reminder => reminder.id == deleteID);
+    let index = database.req.user.reminders.findIndex(reminder => reminder.id == deleteID);
     // 3. Remove the reminder
     // "1" for the number of reminders to rremove from the starting index
-    database.cindy.reminders.splice(index, 1);
+    database.req.user.reminders.splice(index, 1);
     
     res.redirect("/reminders");
   },
